@@ -24,8 +24,9 @@ internal class FizzBuzzTests {
     @Test
     fun generateNumbersShould1AsFirstListElement() {
         val actual = sut.generateNumbers()
-        // assert actual[0] Equals 1
+        val sizeOfActual = actual.size
+        assertNotEquals(0, sizeOfActual)
+        assertEquals( 1, actual[0])
     }
-
 }
 
