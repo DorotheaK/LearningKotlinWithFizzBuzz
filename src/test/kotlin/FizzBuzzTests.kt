@@ -2,22 +2,26 @@ import org.example.FizzBuzz
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertIs
+import kotlin.test.assertNotEquals
 
 internal class FizzBuzzTests {
     private val sut : FizzBuzz = FizzBuzz()
 
+    // this may help:
+    // https://phauer.com/2018/best-practices-unit-testing-kotlin/
+
     @Test
     fun generateNumbersShouldReturnNumbersFrom1To100(){
+        // val: immutable, var: mutable
         val actual = sut.generateNumbers()
         assertEquals(1, actual[0])
-        // Letzter soll 100 sein
-        // Anzahl Items = 100
+        assertEquals(100, actual.last())
+        assertEquals(100, actual.size)
     }
 
     @Test
     fun generateNumbersShouldReturnList(){
         val actual = sut.generateNumbers()
-        // assert is List (actual)
         assertIs<List<Int>>(actual)
     }
 
