@@ -10,6 +10,21 @@ internal class FizzBuzzTests {
     // this may help:
     // https://phauer.com/2018/best-practices-unit-testing-kotlin/
 
+
+    @Test
+    fun translateShould1for1(){
+        val numbers = listOf(1)
+        val actual = sut.translate(numbers)
+
+    }
+
+    @Test
+    fun translateShouldReturnString(){
+        val numbers = listOf(1,2,3)
+        val actual = sut.translate(numbers)
+        assertIs<List<String>>(actual)
+    }
+
     @Test
     fun generateNumbersShouldReturnNumbersFrom1To100(){
         // val: immutable, var: mutable
